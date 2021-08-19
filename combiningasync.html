@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <script >
+        async function countryfetch(){
+            //Asia
+            const asia=await fetch("https://restcountries.eu/rest/v2/region/asia")
+            const parsed=await asia.json();
+            //Europe
+            const europe=await fetch("https://restcountries.eu/rest/v2/region/europe")
+            const europarsed=await europe.json();
+            // let result=await Promise.all([parsed,europarsed]);
+            // console.log(result.flat());
+            console.log([parsed,europarsed].flat())
+            
+        }
+        countryfetch()
+    </script>
+</body>
+</html>

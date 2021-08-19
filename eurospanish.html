@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euro-Spanish</title>
+</head>
+<body>
+    <script>
+        let result=[];
+        let eurospanish=async function(){
+            try{
+                const spanish=await fetch("https://restcountries.eu/rest/v2/lang/spa");
+            const spaarr=await spanish.json();
+            for(var country of spaarr){
+                if(country.region=="Europe"){
+                    result.push(country);
+                }
+            }
+            console.log(result);
+            }
+            catch{
+                console.log("Page Not found");
+            }
+        }()
+    </script>
+</body>
+</html>

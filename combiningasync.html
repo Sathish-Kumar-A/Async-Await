@@ -9,7 +9,8 @@
 <body>
     <script >
         async function countryfetch(){
-            //Asia
+            try{
+                //Asia
             const asia=await fetch("https://restcountries.eu/rest/v2/region/asia")
             const parsed=await asia.json();
             //Europe
@@ -18,6 +19,10 @@
             // let result=await Promise.all([parsed,europarsed]);
             // console.log(result.flat());
             console.log([parsed,europarsed].flat())
+            }
+            catch{
+                console.log("Page Not Found")
+            }
             
         }
         countryfetch()
